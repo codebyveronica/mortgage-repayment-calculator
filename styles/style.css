@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    /* ## Colors
+    ### Primary */
+    --lime: #d7da2f;
+    --red: #d73328;
+
+    /* ### Neutral */
+    --white: #ffffff;
+    --slate100: #e3f3fd;
+    --slate300: #9abed5;
+    --slate500: #6b94a8;
+    --slate700: #4e6e7e;
+    --slate900: #122f3f;
+
+    /* ## Font */
+    --font: "Plus Jakarta Sans", sans-serif;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--font);
+    font-weight: 500;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.calculator {
+    width: 100%;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--slate900);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.clear-all {
+    color: var(--slate700);
+    font-weight: 500;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--slate100);
+    margin: 5px 0 15px;
+}
+
+.calculator h2 {
+    color: var(--slate700);
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.mortgage-data {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 12px;
+    border: 1px solid var(--slate900);
+    border-radius: 5px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.mortgage-data label {
+    position: absolute;
+    color: var(--slate500);
+    background-color: var(--slate100);
+    font-weight: 700;
+    padding: 12px;
+}
+
+.mortgage-data .in-left {
+    left: 0;
+}
+
+.mortgage-data .in-right {
+    right: 0;
+}
+
+.mortgage-data > input[type="number"] {
+    display: inline;
+    width: 100%;
+    border: none;
+}
+
+.mortgage-data > input[type="number"]:focus {
+    outline: none;
+}
+
+.form-control {
+    display: grid;
+    grid-template-columns: 16px auto;
+    align-items: center;
+    gap: 15px;
+
+    color: var(--slate900);
+    font-weight: 700;
+
+    padding: 12px;
+    border: 1px solid var(--slate900);
+    border-radius: 5px;
+}
+
+input[type='radio'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    font: inherit;
+    color: var(--slate900);
+    width: 16px;
+    height: 16px;
+    border: 1.6px solid var(--slate900);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+input[type='radio']::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: scale(0);
+    transform: 120ms transform ease-in-out;
+    box-shadow: inset 16px 16px var(--lime);
+}
+
+input[type='radio']:checked {
+    border-color: var(--lime);
+}
+
+input[type='radio']:checked::before {
+    transform: scale(1);
+}
+
+.form-control + .form-control {
+    margin-top: 12px;
+}
+
+.calculate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+
+    color: var(--slate900);
+    font-weight: 700;
+    border: none;
+    background-color: var(--lime);
+    border-radius: 40px;
+    width: 100%;
+    padding: 15px;
+
+    margin: 25px 0 10px;
+}
+
+.results {
+    background-color: var(--slate900);
+    text-align: center;
+    padding: 25px;
+}
+
+.results img {
+    margin-top: 10px;
+}
+
+.results h2 {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.results p {
+    color: var(--slate300);
+    margin-bottom: 20px;
+}
