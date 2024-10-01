@@ -14,43 +14,54 @@
             <h1>Mortgage Calculator</h1>
             <button class="clear-all">Clear All</button>
 
-            <form>
-                <h2>Mortgage Amount</h2>
-                <div class="mortgage-data">
-                    <label for="amount-txt" class="in-left">£</label>
-                    <input type="number" name="amount" id="amount-txt" class="mortgage-input" class="label-in-left">
-                    <span></span>
-                </div>
-
-                <h2>Mortgage Term</h2>
-                <div class="mortgage-data">
-                    <label for="term-txt" class="in-right">years</label>
-                    <input type="number" name="term" id="term-txt" class="mortgage-input">
-                    <span></span>
-                </div>
+            <div class="forma">
+                <form>
+                    <div class="field">
+                        <h2>Mortgage Amount</h2>
+                        <div class="mortgage-data">
+                            <label for="amount-txt" class="in-left">£</label>
+                            <input type="number" name="amount" id="amount-txt" class="mortgage-input" class="label-in-left">
+                        </div>
+                        <span> <!-- This field is required --> </span>
+                    </div>
+                    <div class="field">
+                        <h2>Mortgage Term</h2>
+                        <div class="mortgage-data">
+                            <label for="term-txt" class="in-right">years</label>
+                            <input type="number" name="term" id="term-txt" class="mortgage-input">
+                        </div>
+                        <span> <!-- This field is required --> </span>
+                    </div>
+                    <div class="field">
+                        <h2>Interest Rate</h2>
+                        <div class="mortgage-data">
+                            <label for="rate-txt" class="in-right">%</label>
+                            <input type="text" name="rate" id="rate-txt" class="mortgage-input">
+                        </div>
+                        <span> <!-- This field is required --> </span>
+                    </div>
+                </form>
                 
-                <h2>Mortgage Rate</h2>
-                <div class="mortgage-data">
-                    <label for="rate-txt" class="in-right">%</label>
-                    <input type="number" name="rate" id="rate-txt" class="mortgage-input">
-                    <span></span>
-                </div>
+                <form>
+                    <div class="field">
+                        <h2>Mortgage Type</h2>
+                        <label for="repayment" class="form-control">
+                            <input type="radio" name="type" id="repayment" value="repayment">
+                            Repayment
+                        </label>
+                        <label for="interest" class="form-control">
+                            <input type="radio" name="type" id="interest" value="interest-only">
+                            Interest Only
+                        </label>
+                        <span> <!-- This field is required --> </span>
+                    </div>
 
-                <h2>Mortgage Type</h2>
-                <label for="repayment" class="form-control">
-                    <input type="radio" name="type" id="repayment" value="repayment">
-                    Repayment
-                </label>
-                <label for="interest" class="form-control">
-                    <input type="radio" name="type" id="interest" value="interest-only">
-                    Interest Only
-                </label>
-
-                <button class="calculate">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
-                    Calculate Repayments
-                </button>
-            </form>
+                    <button class="calculate" id="calculate">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#133041" d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"/></svg>
+                        Calculate Repayments
+                    </button>
+                </form>                
+            </div>
 
         </section>
 
