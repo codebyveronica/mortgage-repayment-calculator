@@ -13,6 +13,7 @@
     --slate500: #6b94a8;
     --slate700: #4e6e7e;
     --slate900: #122f3f;
+    --darker-slate: #0e2431;
 
     /* ## Font */
     --font: "Plus Jakarta Sans", sans-serif;
@@ -190,24 +191,65 @@ input[type='radio']:checked::before {
     margin: 1.55em 0 0.6em;
 }
 
-.results {
+.repayments-area {
+    color: var(--slate500);
     background-color: var(--slate900);
-    text-align: center;
     padding: 1.55em;
 }
 
-.results img {
-    margin-top: 0.6em;
-}
-
-.results h2 {
+.repayments-area h2 {
     color: white;
     font-size: 1.4em;
     font-weight: 700;
-    margin: 0.9em 0;
+    margin-bottom: 0.6em;
 }
 
-.results p {
-    color: var(--slate300);
+.repayments-area p {
     margin-bottom: 1.25em;
+}
+
+.repayments-area .no-repayments {
+    text-align: center;
+}
+
+.repayments-area .no-repayments img {
+    margin-top: 0.6em;
+}
+
+.repayments-area .no-repayments h2 {
+    margin-top: 0.6em;
+}
+
+.repayments-area .repayments .repayments-data {
+    color: var(--slate500);
+    background-color: var(--darker-slate);
+    padding: 1em;
+    border-top: 0.2em solid var(--lime);
+    border-radius: 5px;
+}
+
+.repayments-data .monthly-repay {
+    display: block;
+    color: var(--lime);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 0.2em;
+    padding-bottom: 0.4em;
+    border-bottom: 0.01em solid var(--slate700);
+}
+
+.repayments-data .p-total-repay {
+    margin-top: 1em;
+}
+
+.repayments-data .total-repay {
+    display: block;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-top: 0.4em;
+}
+
+.hide {
+    display: none;
 }

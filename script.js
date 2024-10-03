@@ -1,8 +1,23 @@
 const amount = document.querySelector('#amount-txt');
 const term = document.querySelector('#term-txt');
 const rate = document.querySelector('#rate-txt');
-
+const field = document.querySelector('#radio-field');
+const types = document.getElementsByName('type');
+const repaymentType = document.querySelector('#repayment');
+const interestType = document.querySelector('#interest');
 const calculateButton = document.querySelector('#calculate');
+const withoutRepaymentsHTML = document.querySelector('.no-repayments');
+const repaymentsHTML = document.querySelector('.repayments');
+const monthlyRepayHTML = document.querySelector('.monthly-repay');
+const totalRepayHTML = document.querySelector('.total-repay');
+
+let amountValue;
+let validAmount;
+let termValue;
+
+let validTerm;
+let rateValue;
+let validRate;
 
 const displayErrorStyle = (input) => {
     const parentEl = input.parentElement;
@@ -32,6 +47,40 @@ const resetStyle = (input) => {
     errorMessage.innerHTML = '';
 }
 
+const checkInputRadio = () => {
+    const repaymentParentEl = types[0].parentElement;
+    const interestParentEl = types[1].parentElement;
+
+    if(types[0].checked == true) {
+        repaymentParentEl.classList.add('checked');
+        interestParentEl.classList.remove('checked');
+    } else if(types[1].checked == true) {
+        interestParentEl.classList.add('checked');
+        repaymentParentEl.classList.remove('checked');
+    } else {
+        repaymentParentEl.classList.remove('checked');
+        interestParentEl.classList.remove('checked');
+    }
+}
+
+const calculateRepayment = (amount, term, rate) => {
+    let r = (rate / 100) / 12;
+    let m = (r * amount) / (1 - (1 + r) ** (-term * 12))
+    let repayment = m.toLocaleString('en-GB', {style: 'currency', currency: 'GBP'});
+9
+    let totalRepayment = (m * (term * 12)).toLocaleString('en-GB', {style: 'currency', currency: 'GBP'});
+
+    displayRepayments(repayment, totalRepayment);
+}
+
+const displayRepayments = (repayment, totalRepayment) => {
+    withoutRepaymentsHTML.classList.add('hide');
+    repaymentsHTML.classList.remove('hide');
+
+    monthlyRepayHTML.innerHTML = `${repayment}`;
+    totalRepayHTML.innerHTML = `${totalRepayment}`;
+}
+
 calculateButton.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -41,6 +90,8 @@ calculateButton.addEventListener('click', (e) => {
         displayError(amount, 'Amount must be greater than 10,000');
     } else {
         resetStyle(amount);
+        validAmount = true;
+        amountValue = amount.value;
     }
 
     if(term.value === '') {
@@ -51,9 +102,11 @@ calculateButton.addEventListener('click', (e) => {
         displayError(term, 'Term cannot be less than 1')
     } else {
         resetStyle(term);
+        validTerm = true;
+        termValue = term.value;
     }
 
-    if(rate.value == '') {
+    if(rate.value === '') {
         displayError(rate, 'This field is required');
     } else if (rate.value > 100) {
         displayError(rate, 'Rate cannot be greater than 100');
@@ -61,7 +114,25 @@ calculateButton.addEventListener('click', (e) => {
         displayError(rate, 'Rate cannot be less than 1');
     } else {
         resetStyle(rate);
+        validRate = true;
+        rateValue = rate.value;
+    }
+
+    if(types[0].checked == false && types[1].checked == false) {
+        const errorMessage = field.querySelector('span');
+        errorMessage.innerHTML = 'This field is required';
+    } else {
+        const errorMessage = field.querySelector('span');
+        errorMessage.innerHTML = '';
+    }
+
+    if(validAmount && validTerm && validRate) {
+        calculateRepayment(amountValue, termValue, rateValue);
     }
 });
 
-// make the input radio style change when checked and validation
+types.forEach(type => {
+    type.addEventListener('click', (e) => {
+        checkInputRadio();
+    })
+})
