@@ -31,6 +31,7 @@ Users should be able to:
 
 ![](images/screenshots/desktop.png)
 ![](images/screenshots/desktop-validation.png)
+![](images/screenshots/desktop-repayment.png)
 ![](images/screenshots/mobile.png)
 ![](images/screenshots/mobile-validation.png)
 
