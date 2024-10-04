@@ -29,10 +29,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/screenshot/desktop.png)
-![](./images/screenshot/desktop-validation.png)
-![](./images/screenshot/mobile.png)
-![](./images/screenshot/mobile-validation.png)
+![](images/screenshot/desktop.png)
+![](images/screenshot/desktop-validation.png)
+![](images/screenshot/mobile.png)
+![](images/screenshot/mobile-validation.png)
 
 ### Links
 
