@@ -43,7 +43,7 @@
 
     main {
         display: grid;
-        grid-template-columns: 540px 460px;
+        grid-template-columns: 530px 470px;
         align-items: center;
         background-color: white;
         max-width: 1000px;
@@ -90,16 +90,13 @@
     }
 
     .field {
-        margin-bottom: 1em;
+        margin-bottom: 0;
     }
 
-    .field.term {
-        display: inline-block;
-        padding-right: 1.46em;
-    }
-
-    .field.rate {
-        display: inline-block;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
     
     .form-control {
