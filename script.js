@@ -67,7 +67,6 @@ const calculateRepayment = (amount, term, rate) => {
     let r = (rate / 100) / 12;
     let m = (r * amount) / (1 - (1 + r) ** (-term * 12))
     let repayment = m.toLocaleString('en-GB', {style: 'currency', currency: 'GBP'});
-9
     let totalRepayment = (m * (term * 12)).toLocaleString('en-GB', {style: 'currency', currency: 'GBP'});
 
     displayRepayments(repayment, totalRepayment);
