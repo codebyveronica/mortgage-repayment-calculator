@@ -6,15 +6,18 @@
     <title>Mortgage Calculator</title>
     <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media-query.css">
     <script defer src="script.js"></script>
 </head>
 <body>
     <main>
-        <section class="calculator">
-            <h1>Mortgage Calculator</h1>
-            <button class="clear-all">Clear All</button>
+        <div class="calculator">
+            <div class="title-container">
+                <h1>Mortgage Calculator</h1>
+                <button class="clear-all">Clear All</button>
+            </div>
 
-            <div class="forma">
+            <div class="form">
                 <form>
                     <div class="field">
                         <h2>Mortgage Amount</h2>
@@ -24,7 +27,8 @@
                         </div>
                         <span> <!-- This field is required --> </span>
                     </div>
-                    <div class="field">
+
+                    <div class="field term">
                         <h2>Mortgage Term</h2>
                         <div class="mortgage-data">
                             <label for="term-txt" class="in-right">years</label>
@@ -32,7 +36,8 @@
                         </div>
                         <span> <!-- This field is required --> </span>
                     </div>
-                    <div class="field">
+
+                    <div class="field rate">
                         <h2>Interest Rate</h2>
                         <div class="mortgage-data">
                             <label for="rate-txt" class="in-right">%</label>
@@ -63,10 +68,9 @@
                     Calculate Repayments
                 </button>
             </div>
+        </div>
 
-        </section>
-
-        <section class="repayments-area">
+        <div class="repayments-area">
             <div class="no-repayments">
                 <img src="images/illustration-empty.svg" alt="illustration">
                 <h2>Results shown here</h2>
@@ -84,7 +88,7 @@
                     <strong class="total-repay"> <!-- The total repay will be displayed here --> </strong>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 </body>
 </html>
