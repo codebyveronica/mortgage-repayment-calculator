@@ -15,6 +15,23 @@
     --darker-slate: #0e2431;
 }
 
+@media screen and (min-width: 600px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--slate100);
+        padding: 2em;
+    }
+
+    main {
+        background-color: white;
+        max-width: 500px;
+        border-radius: 1em;
+        overflow: hidden;
+    }
+}
+
 @media screen and (min-width: 1200px) {
     body {
         height: 100vh;
@@ -29,7 +46,7 @@
         grid-template-columns: 540px 460px;
         align-items: center;
         background-color: white;
-        width: 1000px;
+        max-width: 1000px;
         border-radius: 1em;
         overflow: hidden;
     }
