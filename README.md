@@ -30,10 +30,11 @@ Users should be able to:
 ### Screenshot
 
 ![](images/screenshots/desktop.png)
-![](images/screenshots/desktop-validation.png)
+![](images/screenshots/validation-desktop.png)
 ![](images/screenshots/desktop-repayment.png)
 ![](images/screenshots/mobile.png)
 ![](images/screenshots/mobile-validation.png)
+![](images/screenshots/mobile-repayment.png)
 
 ### Links
 
